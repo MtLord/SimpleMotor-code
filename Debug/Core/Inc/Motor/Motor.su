@@ -1,0 +1,6 @@
+Motor.hpp:21:7:long int Motor::map(float, long int, long int, long int, long int)	32	static
+Motor.cpp:13:6:void Motor::setDuty(float)	32	static
+Motor.cpp:29:6:void BLMotor::SetFree()	16	static
+Motor.cpp:36:6:void Motor::Begin()	16	static
+Motor.cpp:42:6:void Motor::SetFrequency(long int)	32	static
+Motor.cpp:68:6:void Motor::HAL_TIM_SetCompare(TIM_HandleTypeDef*, int, int)	24	static
