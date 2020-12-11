@@ -2,7 +2,7 @@
  * Application.hpp
  *
  *  Created on: 2019/05/04
- *      Author: —T‘¿
+ *      Author: ï¿½Tï¿½ï¿½
  */
 
 #ifndef APPLICATION_APPLICATION_HPP_
@@ -16,6 +16,7 @@ class App
 	float RestoreData(int until);
 	//long  RestoreData(int until);
 	unsigned short node_id=0;
+	unsigned short board_id=0;
 public:
 	App(LowlayerHandelTypedef *_plow):plow(_plow)
 	{

@@ -7,6 +7,8 @@
 
 #include "Application.hpp"
 #include "DefineOrder.h"
+
+#define BOARDID 1
 extern unsigned char RxFIFO_Data[6];
 extern CAN_RxHeaderTypeDef RXmsg;
 extern bool CanRxFlag;
@@ -53,10 +55,13 @@ void App::TaskShift()
 {
 	if(CanRxFlag)
 	{
-		if(RXmsg.ExtId>>ORDER_BIT_Pos==SET_DUTY)//����ID��SET_DUTY�Ɉ�v������
+		if(RXmsg.ExtId>>ORDER_BIT_Pos==SET_DUTY)
 		{
-			this->node_id=RXmsg.ExtId&0xF;//�m�[�hID����
-			SetDuty(RestoreData(4));//4�o�C�g�ɕ����Ă����f�[�^�𕜌����ăf���[�e�B�Ƃ��ăZ�b�g
+			this->node_id=(RXmsg.ExtId>>NODE_ID_Pos)&0xF;
+			if((RXmsg.ExtId&0xF)==BOARDID)//ボード番号が自分のと一致したら
+			{
+				SetDuty(RestoreData(4));
+			}
 		}
 
 
