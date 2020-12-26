@@ -41,10 +41,10 @@ void App::SetDuty(float duty)
 	case 4:
 			plow->M4.setDuty(duty);
 			break;
-	case 5:
+	case 17:
 			plow->BL1.setDuty(duty);
 			break;
-	case 6:
+	case 18:
 			plow->BL2.setDuty(duty);
 			break;
 
